@@ -10,3 +10,24 @@ plugins:
     out: src/gen
     opt:
       - target=ts
+  - plugin: go
+    out: ../old-world-api5/pb
+    opt:
+      - paths=source_relative
+  - plugin: go-grpc
+    out: ../old-world-api5/pb
+    opt:
+      - paths=source_relative
+  - plugin: go
+    out: ../old-world-grpc-proxy-5/pb
+    opt:
+      - paths=source_relative
+  - plugin: go-grpc
+    out: ../old-world-grpc-proxy-5/pb
+    opt:
+      - paths=source_relative
+  - plugin: grpc-gateway
+    out: ../old-world-grpc-proxy-5/pb
+    opt:
+      - paths=source_relative
+      - generate_unbound_methods=true

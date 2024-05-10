@@ -4,7 +4,7 @@ package auth;
 
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/happilymarrieddad/old-world/api4/pb/proto/auth";
+option go_package = "github.com/happilymarrieddad/old-world/api5/pb/proto/auth";
 
 service Auth {
     rpc Login(LoginRequest) returns (LoginReply) {}
