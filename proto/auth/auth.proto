@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package auth;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/happilymarrieddad/old-world/api4/pb/proto/auth";
+
+service Auth {
+    rpc Login(LoginRequest) returns (LoginReply) {}
+}
+
+message LoginRequest {
+    string email = 1;
+    string password = 2;
+}
+
+message LoginReply {
+    string token = 1;
+    User user = 2;
+}
+
+message User {
+    string id = 1;
+    string email = 2;
+    string firstName = 3;
+    string lastName = 4;
+    string password = 5;
+    google.protobuf.Timestamp createdAt = 27;
+    google.protobuf.Timestamp updatedAt = 28;
+    google.protobuf.Timestamp deletedAt = 29;
+}
+
+message NewUser {
+    string email = 1;
+    string firstName = 2;
+    string lastName = 3;
+    string password = 4;
+    string passwordConfirm = 5;
+}
